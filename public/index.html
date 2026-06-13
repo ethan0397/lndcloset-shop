@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LnD clozet — Unique. Cozy. You.</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">
+        <img src="logo.png" alt="LnD clozet" class="logo-img" />
+        <span class="logo-text">LnD <b>clozet.</b></span>
+      </a>
+      <button id="cartBtn" class="cart-btn" aria-label="Giỏ hàng">
+        <span class="cart-ico">🛍️</span> Giỏ hàng
+        <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="hero-sun"></span>
+    <div class="container hero-inner">
+      <p class="hero-kicker">✦ Đồ bộ tole lạnh · mát mẻ mùa hè ✦</p>
+      <h1>Unique. <span>Cozy.</span> You.</h1>
+      <p class="hero-sub">Vải thoáng mát, thấm hút mồ hôi, nhiều màu xinh xắn.<br/>Mặc nhà hay đi chơi đều thật thoải mái và dễ thương.</p>
+      <a href="#shop" class="hero-btn">Khám phá ngay ↓</a>
+    </div>
+  </section>
+
+  <span id="shop"></span>
+  <nav class="container cat-nav" id="catNav"></nav>
+
+  <div class="container toolbar">
+    <div class="search-box">
+      <span class="search-ico">🔍</span>
+      <input id="searchInput" type="search" placeholder="Tìm sản phẩm..." />
+    </div>
+    <select id="sortSelect" class="sort-select">
+      <option value="default">Sắp xếp: Mặc định</option>
+      <option value="price-asc">Giá: Thấp → Cao</option>
+      <option value="price-desc">Giá: Cao → Thấp</option>
+      <option value="name-asc">Tên: A → Z</option>
+    </select>
+  </div>
+
+  <main class="container">
+    <div id="productGrid" class="product-grid"></div>
+    <p id="emptyState" class="empty-state hidden">Không tìm thấy sản phẩm phù hợp 😅</p>
+  </main>
+
+  <section class="reviews container">
+    <h2 class="section-title">Hình ảnh & Review từ shop 💬</h2>
+    <p class="section-sub">Vải tole cao cấp · Mềm mại · Thoáng khí · Thấm hút tốt</p>
+    <div id="gallery" class="gallery"></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="logo.png" alt="LnD clozet" class="footer-logo" />
+      <p class="footer-slogan">Unique. Cozy. You.</p>
+      <p class="footer-copy">© 2026 LnD clozet · Đặt hàng online, giao tận nơi 🚚</p>
+    </div>
+  </footer>
+
+  <!-- Modal chi tiet san pham -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" data-close>✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Drawer gio hang -->
+  <div id="cartDrawer" class="drawer hidden">
+    <div class="drawer-backdrop" data-close-cart></div>
+    <aside class="drawer-panel">
+      <div class="drawer-header">
+        <h2>Giỏ hàng</h2>
+        <button class="modal-close" data-close-cart>✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div class="discount-box">
+          <input id="discountInput" placeholder="Nhập mã giảm giá" />
+          <button type="button" id="applyDiscount">Áp dụng</button>
+        </div>
+        <p id="discountMsg" class="discount-msg"></p>
+        <div class="sum-row"><span>Tạm tính</span><span id="sumSubtotal">0đ</span></div>
+        <div class="sum-row"><span>Phí vận chuyển</span><span id="sumShip">0đ</span></div>
+        <div class="sum-row sum-discount hidden" id="sumDiscountRow">
+          <span>Giảm giá <em id="sumDiscountCode"></em></span><span id="sumDiscount">0đ</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Tổng cộng</span>
+          <strong id="cartTotal">0đ</strong>
+        </div>
+        <p class="ship-note" id="shipNote"></p>
+        <form id="checkoutForm" class="checkout-form">
+          <h3>Thông tin nhận hàng</h3>
+          <input name="name" placeholder="Họ và tên *" required />
+          <input name="phone" placeholder="Số điện thoại *" required />
+          <input name="address" placeholder="Địa chỉ nhận hàng *" required />
+          <textarea name="note" placeholder="Ghi chú (không bắt buộc)" rows="2"></textarea>
+          <button type="submit" class="btn-order" id="orderBtn">Đặt hàng</button>
+          <p id="orderMsg" class="order-msg"></p>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

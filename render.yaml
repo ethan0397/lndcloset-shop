@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: lndcloset-shop
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.1
+      - key: DISCORD_WEBHOOK_URL
+        sync: false
+      - key: PUBLIC_BASE_URL
+        sync: false
