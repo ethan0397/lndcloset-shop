@@ -166,7 +166,13 @@ h1, h2, h3, .display { font-family: "Baloo 2", "Be Vietnam Pro", sans-serif; }
 .modal-info h2 { font-size: 1.5rem; margin-bottom: 6px; color: var(--brown-dark); }
 .modal-price { color: var(--terra-dark); font-size: 1.7rem; font-weight: 800; margin-bottom: 12px; font-family: "Baloo 2", sans-serif; }
 .modal-desc { color: var(--ink-soft); margin-bottom: 16px; }
+.adult-badge {
+  display: inline-block; margin: 0 0 14px; padding: 4px 12px;
+  background: var(--brown); color: #fff; font-size: .82rem; font-weight: 700;
+  border-radius: 999px; letter-spacing: .2px;
+}
 .opt-label { font-weight: 600; margin: 14px 0 8px; }
+.size-hint { font-weight: 500; font-size: .82rem; color: var(--ink-soft); }
 .opt-row { display: flex; gap: 10px; flex-wrap: wrap; }
 .variant-opt {
   width: 58px; height: 58px; border-radius: 12px; overflow: hidden; cursor: pointer;

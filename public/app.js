@@ -156,9 +156,10 @@ function renderModal() {
     <div class="modal-info">
       <h2>${p.name}</h2>
       <div class="modal-price">${VND(p.price)}</div>
+      <span class="adult-badge">🧍 Đồ bộ người lớn</span>
       <p class="modal-desc">${p.desc}</p>
       ${variantBlock}
-      <div class="opt-label">Kích cỡ</div>
+      <div class="opt-label">Kích cỡ <span class="size-hint">(dành cho người lớn — chọn theo cân nặng)</span></div>
       <div class="opt-row" id="sizeRow">${sizes}</div>
       <div class="qty-row">
         <span>Số lượng</span>
