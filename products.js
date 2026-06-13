@@ -62,7 +62,7 @@ export const gallery = [
 // Gia theo phan loai
 const GIA = { nu: 159000, nam: 189000, quan: 50000 };
 
-const SIZE_NU = ["M (45-55kg)", "L (55-65kg)", "XL (65-75kg)"];
+const SIZE_NU = ["M (<50kg)", "L (<65kg)"];
 const SIZE_NAM = ["M", "L", "XL", "XXL"];
 const SIZE_QUAN = ["M", "L", "XL"];
 
