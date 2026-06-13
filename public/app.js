@@ -374,7 +374,18 @@ async function submitOrder(e) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ customer, items: CART, discountCode: STATE.discountCode })
     });
-    const data = await res.json();
+    let data;
+    try {
+      data = await res.json();
+    } catch {
+      data = null;
+    }
+    if (!data) {
+      msg.textContent =
+        "⏳ Máy chủ đang khởi động, vui lòng đợi ~30 giây rồi bấm Đặt hàng lại.";
+      msg.className = "order-msg err";
+      return;
+    }
     if (data.ok) {
       const paid = data.totals ? " Tổng: " + VND(data.totals.total) : "";
       msg.textContent = "✅ " + (data.message || "Đặt hàng thành công!") + paid;
